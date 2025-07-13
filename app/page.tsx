@@ -1,4 +1,6 @@
 
+'use client';
+
 import { useEffect, useState } from "react";
 
 const cardData = [
@@ -37,7 +39,7 @@ const Card = ({ title, url, status, flag, index }: { title: string; url: string;
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] p-8">
+    <div>
       <header className="text-center mb-12 animate-fadeIn">
         <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#a7a3ff] to-[#5d9bff]">
           Sites Page
