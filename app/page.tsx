@@ -30,21 +30,15 @@ export default function Home() {
       title: "App.genn.lu",
       url: "https://app.genn.lu/auth/mainslte",
       status: "Online",
-      flag: "None",
-      isMore: true
+      flag: "None"
     },
     {
       title: "App.beaming.pro",
       url: "https://app.beaming.pro/u/SpIank",
       status: "Online",
-      flag: "None",
-      isMore: true
+      flag: "None"
     }
   ];
-
-  // Разделяем сайты на два ряда по 3
-  const firstRow = sites.slice(0, 3);
-  const secondRow = sites.slice(3, 6);
 
   return (
     <div className="min-h-screen p-4 sm:p-6 md:p-8">
@@ -57,27 +51,14 @@ export default function Home() {
         </p>
       </header>
 
-      {/* Первый ряд из 3 карточек */}
-      <div className="flex justify-center mb-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-6xl">
-          {firstRow.map((site, index) => (
+      <div className="flex flex-col items-center">
+        {/* Центрированные карточки в сетке 3x2 */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-6xl w-full">
+          {sites.map((site, index) => (
             <SiteCard 
               key={index}
               site={site}
               index={index}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Второй ряд из 3 карточек */}
-      <div className="flex justify-center">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-6xl">
-          {secondRow.map((site, index) => (
-            <SiteCard 
-              key={index + 3} // Добавляем смещение для ключей
-              site={site}
-              index={index + 3}
             />
           ))}
         </div>
