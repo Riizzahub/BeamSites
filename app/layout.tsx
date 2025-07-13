@@ -3,7 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Beam Sites',
+  title: 'Immortal Sites',
   description: 'View all of our Roblox links',
 };
 
