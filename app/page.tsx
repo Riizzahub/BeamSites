@@ -1,4 +1,4 @@
-import SiteCard from './components/SiteCard'; // Исправленный импорт
+import SiteCard from './components/SiteCard';
 
 export default function Home() {
   const sites = [
@@ -42,6 +42,10 @@ export default function Home() {
     }
   ];
 
+  // Разделяем сайты на два ряда по 3
+  const firstRow = sites.slice(0, 3);
+  const secondRow = sites.slice(3, 6);
+
   return (
     <div className="min-h-screen p-4 sm:p-6 md:p-8">
       <header className="text-center mb-8 md:mb-12 py-6">
@@ -53,14 +57,30 @@ export default function Home() {
         </p>
       </header>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
-        {sites.map((site, index) => (
-          <SiteCard 
-            key={index}
-            site={site}
-            index={index}
-          />
-        ))}
+      {/* Первый ряд из 3 карточек */}
+      <div className="flex justify-center mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-6xl">
+          {firstRow.map((site, index) => (
+            <SiteCard 
+              key={index}
+              site={site}
+              index={index}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Второй ряд из 3 карточек */}
+      <div className="flex justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-6xl">
+          {secondRow.map((site, index) => (
+            <SiteCard 
+              key={index + 3} // Добавляем смещение для ключей
+              site={site}
+              index={index + 3}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
