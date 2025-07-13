@@ -41,8 +41,8 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen p-4 sm:p-6 md:p-8">
-      <header className="text-center mb-8 md:mb-12 py-6">
+    <div className="min-h-screen bg-black p-4 sm:p-6 md:p-8 flex flex-col items-center">
+      <header className="text-center mb-8 md:mb-12 py-6 w-full max-w-6xl">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#a7a3ff] to-[#5d9bff] bg-clip-text text-transparent">
           Sites Page
         </h1>
@@ -51,15 +51,13 @@ export default function Home() {
         </p>
       </header>
 
-      <div className="flex flex-col items-center">
-        {/* Центрированные карточки в сетке 3x2 */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-6xl w-full">
+      {/* Контейнер с жестким центрированием */}
+      <div className="flex flex-col items-center w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
           {sites.map((site, index) => (
-            <SiteCard 
-              key={index}
-              site={site}
-              index={index}
-            />
+            <div key={index} className="flex justify-center">
+              <SiteCard site={site} index={index} />
+            </div>
           ))}
         </div>
       </div>
