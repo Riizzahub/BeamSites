@@ -1,36 +1,31 @@
+/* app/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] text-[#e0e0ff] min-h-screen;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @apply bg-black text-[#e0e0ff] font-sans;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(93, 155, 255, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(167, 163, 255, 0.1) 0px, transparent 50%);
   }
 }
 
-@layer utilities {
-  .text-gradient {
-    @apply bg-gradient-to-r from-[#a7a3ff] to-[#5d9bff] bg-clip-text text-transparent;
+@layer components {
+  .animate-card {
+    @apply transition-all duration-300;
+    animation: fadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes cardAppear {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.animate-fade-in {
-  animation: fadeIn 1s ease-out forwards;
-}
-
-.animate-card-appear {
-  animation: cardAppear 0.6s ease-out forwards;
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
