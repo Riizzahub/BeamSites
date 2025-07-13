@@ -1,9 +1,8 @@
-// app/layout.tsx
 import './globals.css';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Immortal Sites',
+  title: 'Roblox Beam Sites',
   description: 'View all of our Roblox links',
 };
 
