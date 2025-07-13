@@ -1,5 +1,4 @@
-import SiteCard from '@/app/components/SiteCard';
-import { motion } from 'framer-motion';
+import SiteCard from './components/SiteCard'; // Исправленный импорт
 
 export default function Home() {
   const sites = [
@@ -45,19 +44,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen p-4 sm:p-6 md:p-8">
-      <motion.header 
-        className="text-center mb-8 md:mb-12 py-6"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
-      >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gradient">
+      <header className="text-center mb-8 md:mb-12 py-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-[#a7a3ff] to-[#5d9bff] bg-clip-text text-transparent">
           Sites Page
         </h1>
         <p className="text-base sm:text-lg md:text-xl opacity-80 max-w-2xl mx-auto">
           Use this page to view all of our &quot;Roblox&quot; links and their current status.
         </p>
-      </motion.header>
+      </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
         {sites.map((site, index) => (
