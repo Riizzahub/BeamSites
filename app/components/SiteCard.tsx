@@ -1,8 +1,8 @@
 
 'use client';
 
-import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface Site {
   title: string;
@@ -32,6 +32,8 @@ export default function SiteCard({ site, index }: SiteCardProps) {
         rounded-2xl
         relative
         cursor-pointer
+        mx-auto // Центрирование карточки
+        w-full max-w-md // Ограничение ширины
       `}
       initial={{ opacity: 0, scale: 0.95 }}
       animate={{ opacity: 1, scale: 1 }}
