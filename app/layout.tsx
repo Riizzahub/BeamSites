@@ -1,9 +1,9 @@
-import './globals.css';
-import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Immortal Sites',
-  description: 'View all of our Roblox links',
+import './globals.css';
+
+export const metadata = {
+  title: 'Sites Page',
+  description: 'Use this page to view all of our Roblox links',
 };
 
 export default function RootLayout({
@@ -12,10 +12,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="bg-black">
-      <body className="bg-black text-[#e0e0ff] min-h-screen">
+    <html lang="ru">
+      <body className="min-h-screen bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] p-8">
         {children}
       </body>
     </html>
   );
 }
+```
